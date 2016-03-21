@@ -7,10 +7,14 @@
 <body>
 
 <div ng-app="editEmailsApp" ng-controller="controller" ng-init="emailsCount = 0;">
-    <h1>Share "Board name" with others</h1>
-    <emails-editor></emails-editor>
-	<button ng-click="addEmails()">Add email</button>
-	<button ng-click="getEmailsCount()">Get emails count</button>
+    <div id="top">
+        <h1>Share "Board name" with others</h1>
+        <emails-editor></emails-editor>
+    </div>
+    <div id="buttons">
+        <button ng-click="addEmails()" style="width: 100px">Add email</button>
+        <button ng-click="getEmailsCount()" style="width: 120px">Get emails count</button>
+    </div>
 </div>
 <script src="emailsEditor.js">
 </script>
