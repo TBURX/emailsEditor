@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+button{
+    background: #6699ff;
+    padding: 20px
+}
+emails-editor div {
+    border: 5px solid red;
+    padding: 15px;
+}
+emails-editor input[type="text"]{    
+    border: none;
+    width: auto;
+    margin-left: 12px;
+}
+emails-editor input[type="text"]:focus{    
+    outline: none;
+}
