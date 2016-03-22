@@ -11,7 +11,7 @@ emails-editor div {
     margin: auto;
     background: white;
 }
-emails-editor #email-input{    
+emails-editor .email-input{    
     border: none;
     display: inline-block;
     float:left;
@@ -19,7 +19,7 @@ emails-editor #email-input{
     background: transparent;
     line-height: 23px;
 }
-emails-editor #email-input:focus{    
+emails-editor .email-input:focus{    
     outline: none;
 }
 emails-editor .email{
