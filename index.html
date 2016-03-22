@@ -9,18 +9,26 @@
 </head>
 <body>
 
-<div ng-app="editEmailsApp" ng-controller="controller" ng-init="emailsCount = 0;">
-    <div id="top">
-        <h1>Share "Board name" with others</h1>
-        <emails-editor></emails-editor>
+    <div ng-app="editEmailsApp" ng-controller="controller">
+        <div id="top">
+            <h1>Share "Board name" with others</h1>
+            <emails-editor></emails-editor>
+        </div>
+        <div id="buttons">
+            <button ng-click="addEmails()" style="width: 100px">Add email</button>
+            <button ng-click="getEmailsCount()" style="width: 120px">Get emails count</button>
+        </div>
     </div>
-    <div id="buttons">
-        <button ng-click="addEmails()" style="width: 100px">Add email</button>
-        <button ng-click="getEmailsCount()" style="width: 120px">Get emails count</button>
-    </div>
-</div>
-<script src="emailsEditor.js">
-</script>
+    
+    <script type="text/ng--template" id="emailsEditor.html">    
+        <div onclick="this.getElementsByTagName(\'input\')[0].focus();">    
+            <span class="email {{email.correct}}" ng-repeat="email in eMails">
+                {{email.name}}
+                <span class="remove" ng-click="remove($index)">&#10006;</span>   
+            </span>    
+            <input type="text" id="email-input" ng-model="emailsString" ng-change="change()" ng-keyup="keyUp($event)" ng-blur="blur()" placeholder="add more people...">
+        </div>
+    </script>
 
 </body>
 </html>
