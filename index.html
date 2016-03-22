@@ -12,15 +12,11 @@
     <div ng-app="editEmailsApp">
         <div id="top">
             <h1>Share "Board name" with others</h1>
-            <emails-editor add-email="addEmail" get-emails-count="getEmailsCount"></emails-editor>
-            <emails-editor add-email="addEmail2" get-emails-count="getEmailsCount2"></emails-editor>
+            <emails-editor add-email="addEmail" get-emails-count="getEmailsCount"/>
         </div>
         <div id="buttons">
             <button ng-click="addEmail()" style="width: 100px">Add email</button>
             <button ng-click="getEmailsCount()" style="width: 120px">Get emails count</button>
-            
-            <button ng-click="addEmail2()" style="width: 100px">Add email 2</button>
-            <button ng-click="getEmailsCount2()" style="min-width: 120px">Get emails count 2</button>
         </div>
         </div>
     </div>

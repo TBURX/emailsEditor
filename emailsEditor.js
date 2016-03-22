@@ -80,7 +80,7 @@ function addEmails($scope){
                 i++;
         }
     
-    var emailRegExp = /^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/;
+    var emailRegExp = /^[a-z]+[a-z0-9._-]+@([a-z0-9]+\.)+[a-z.]{2,3}$/;
     for(i=0;i<tmpEmails.length;i++)
         {
             if(emailRegExp.test(tmpEmails[i]))
