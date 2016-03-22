@@ -4,17 +4,10 @@ var app = angular.module("editEmailsApp", []);
 app.directive("emailsEditor", function() {
     return {
         restrict: 'E',
-        link: function(scope, element, attrs){
+        link: function($scope, $elem, $attrs){
             console.log("Hello, i'm em-ed directive");
         },
         templateUrl : "emailsEditor.html"
-        /*,
-        template : '<div onclick="this.getElementsByTagName(\'input\')[0].focus();">    <span class="email {{email.correct}}" ng-repeat="email in eMails">        {{email.name}}        <span class="remove" ng-click="remove($index)">&#10006;</span>    </span>    <input type="text" id="email-input" ng-model="emailsString" ng-change="change()" ng-keyup="keyUp($event)" ng-blur="blur()" placeholder="add more people..."></div>'*/
-              /*,
-        scope:{
-            emailsString:"@",
-            eMails:"="
-        }*/
     };
 });
 
@@ -64,7 +57,10 @@ app.controller("controller", function($scope){
     };
     $scope.remove = function($index){
         $scope.eMails.splice($index,1);
-    }
+    };
+    $scope.focus = function(){
+        document.getElementById("email-input").focus();
+    };
 });
 
 function addEmails($scope){
