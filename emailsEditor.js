@@ -2,12 +2,15 @@
 var app = angular.module("editEmailsApp", []);
 
 app.directive("emailsEditor", function() {
-	var templ = ' <div onclick="this.getElementsByTagName(\'input\')[0].focus();">'+
-        '<span class="email {{email.correct}}" ng-repeat="email in eMails">{{email.name}}<span class="remove" ng-click="remove($index)">&#10006;</span></span>'+
-        '<input type="text" id="email-input" ng-model="emailsString" ng-change="change()" ng-keyup="keyUp($event)" ng-blur="blur()" placeholder="add more people...">'+
-        '</div>';
     return {
-        template : templ/*,
+        restrict: 'E',
+        link: function(scope, element, attrs){
+            console.log("Hello, i'm em-ed directive");
+        },
+        templateUrl : "emailsEditor.html"
+        /*,
+        template : '<div onclick="this.getElementsByTagName(\'input\')[0].focus();">    <span class="email {{email.correct}}" ng-repeat="email in eMails">        {{email.name}}        <span class="remove" ng-click="remove($index)">&#10006;</span>    </span>    <input type="text" id="email-input" ng-model="emailsString" ng-change="change()" ng-keyup="keyUp($event)" ng-blur="blur()" placeholder="add more people..."></div>'*/
+              /*,
         scope:{
             emailsString:"@",
             eMails:"="
